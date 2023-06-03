@@ -504,17 +504,6 @@ if (!uniqueElements.includes(element)) {
 uniqueElements.push(element);}}
 return uniqueElements;}
 
-function appendFile(filePath, content) {
-return new Promise((resolve, reject) => {
-fs.appendFile(filePath, content, 'utf8', (err) => {
-if (err) {
-  reject(err);
-} else {
-  resolve();
-}
-});
-});
-}
 function appendChild(variableitem) {
 document.body.appendChild(variableitem);
 console.log('Appended' + variableitem + ' to the website.')
