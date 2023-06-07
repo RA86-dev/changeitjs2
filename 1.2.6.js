@@ -4,8 +4,11 @@ Date Created: 5/26/23
 Description
 Change it is a Javascript Program to make a fun/work tool.
 Website: [shortened]: tinurl.com/changeitjs
-Author: RA86-dev
+Author: RA86-de
+v
 */
+
+const apiKey = "PUT_YOUR_API_KEY_HERE";
 // Loading...
 console.clear()
 console.log('Preparing to Load')
@@ -216,16 +219,8 @@ function info() {
 alert('Change It! is a online interactive Javascript code used for debbuging and playing with websites. This was created on May 26th 2023, And was created by one person. Click OK to continue.')
 alert('Currently, Change It! is a Javascript function definer but maybe be can be made as a extension plugin in the future.')
 alert('This also can be used for any purpose, like making a fun website or having fun!')
+alert('Thank you for using Change It JS!')
 console.log('Printed Info about Change It!')
-}
-function redirectto(url) {
-var redirect = confirm('You are redirecting to the website ' + url + '. ')
-if (redirect == true) {
-document.location.replace(url)
-} if (redirect == false) {
-    console.error('user does not want to redirect!')
-}
-
 }
 function findMax(...numbers) {
 const maxNumber = Math.max(...numbers);
@@ -320,30 +315,37 @@ console.log('Arrays are ' + (isEqual ? '' : 'not ') + 'equal.');
 function ftc(f) {
 var celsius = (f-32)*(5/9)
 console.log(f+'F to C is'+ (f-32)*(5/9))
+return celsius;
 }
 function ctf(c) {
 var farenheit = (c*9/5) +32
 console.log(c+'C is ' + farenheit)
+return farenheit;
 }
 function add(a,b) {
 cadd = a+b
 console.log(a+'+'+b + '=' + (a+b))
+return cadd;
 }
 function subtract(a,b) {
 csub = a-b
 console.log(a+'-'+b + '=' + (a-b))
+return csub;
 }
 function multiply(a,b) {
 cmul = a*b
 console.log(a+'*'+b + '=' + (a*b))
+return cmul;
 }
 function divide(a,b) {
 cdiv = a/b
 console.log(a+'÷'+b + '=' + (a/b))
+return cdiv;
 }
 function append(a,b) {
 var append = a.append(b);
 console.log(a + ' Appended with ' + b + ' equals to' + append); 
+return append;
 }
 // Basic Email Validation System:
 function emailvalidation(email) {
@@ -385,8 +387,6 @@ console.log(
   innerText
 );
 }
-//
-
 function calculatePercentage(value, total) {
 const percentage = (value / total) * 100;
 console.log(value + ' is ' + percentage + '% of ' + total);
@@ -414,7 +414,7 @@ divElement.setAttribute(key, value);
 document.body.appendChild(divElement);
 }
 // 1.1.3!
-function ins_picture(url,width,height) {
+function ins_picture(url,width,height,id) {
 // Creates a child-element called image
 const image = document.createElement('img')
 // adds size attributes in
@@ -422,6 +422,7 @@ image.width=width;
 image.height=height;
 // Inserts the URL.
 image.src=url;
+image.id = id;
 // Appends the child to the body.
 document.body.appendChild(image);
 }
@@ -554,11 +555,9 @@ document.body.style.color = color;
 
 
 
-
 function countKeys(obj) {
 return Object.keys(obj).length;
 }
-
 // CHATGPT GENERATED (some of the others are chatgpt )
 function formatDate(date, format) {
 const year = date.getFullYear();
@@ -585,10 +584,9 @@ return format;
 function detectWeather(printbool, compilebool, appendPictureForLocation) {
   const kelvin = 273;
 
-  function handleSuccess(position) {
+   function handleSuccess(position) {
     const lon = position.coords.longitude;
     const lat = position.coords.latitude;
-    const apiKey = "PUT_API_KEY";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
     fetch(apiUrl)
@@ -667,6 +665,7 @@ function detectWeather(printbool, compilebool, appendPictureForLocation) {
       });
   }
 
+
   function handleError(error) {
     console.error("Error getting geolocation:", error.message);
   }
@@ -676,6 +675,94 @@ function detectWeather(printbool, compilebool, appendPictureForLocation) {
   } else {
     console.error("Geolocation is not supported");
   }
+}
+function detectWeatherSep( weatheritem, position) {
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(handleSucess3,handleError3);
+  }
+  else {
+    console.error('geolocation is NOT supported.')
+  }
+function handleSucess3(position) {
+  const apiKey2 = apiKey;
+  const kelvin = 273.15; // Define the value of the kelvin variable
+
+  const lon = position.coords.longitude;
+  const lat = position.coords.latitude;
+
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      // Define Variables
+      const temperature = Math.floor(data.main.temp - kelvin) + "°C";
+      const weather = data.weather[0].description;
+      const location = data.name + "," + data.sys.country;
+      const pressure = data.main.pressure + "BAR";
+      const tempmax = Math.floor(data.main.temp_max - kelvin) + "°C";
+      const tempmin = Math.floor(data.main.temp_min - kelvin) + "°C";
+      const wind_degrees = data.wind.deg + " Degrees";
+      const wind_speed = data.wind.speed + "m/s"; // Added wind_speed variable
+      const humidity = data.main.humidity + "%";
+      const sea_level = data.main.sea_level ? data.main.sea_level + " atm" : "N/A"; // Handle undefined sea_level
+      const ground_level = data.main.grnd_level ? data.main.grnd_level + " atm" : "N/A"; // Handle undefined grnd_level
+      const visibility = (data.visibility / 1609.34) + " miles";
+      if (weatheritem == "temperature") {
+        return temperature;
+      } else {
+        if (weatheritem == "weather") {
+          return weather;
+        } else {
+          if (weatheritem == "location") {
+            return location;
+
+          } else {
+            if (weatheritem == "pressure") {
+              return pressure;
+            } else {
+              if (weatheritem == "temperature_max") {
+                return tempmax;
+
+              } else {
+                if (weatheritem == "temperature_min") {
+                  return tempmin;
+                } else {
+                  if (weatheritem == "wind_degrees") {
+                    return wind_degrees;
+                  } else {
+                    if (weatheritem == "wind_speed") {
+                      return wind_speed;
+                    } else {
+                      if (weatheritem == "humidity") {
+                        return humidity;
+                      } else {
+                        if (weatheritem == "sea_level") {
+                          return sea_level;
+                        } else {
+                          if (weatheritem == "ground_level") {
+                            return ground_level;
+                          }
+                          else {
+                            return visibility;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      // Rest of the code logic
+    });
+}
+function handleError3() {
+  console.error("Error:" + error.message);
+}
 }
 
 
@@ -781,4 +868,91 @@ function getLocationInLongitudeAndLatitude() {
         navigator.geolocation.getCurrentPosition(handleSucess2, handleError2);
       } else {
         console.error('Error: Geolocation is not supported.')}
+}
+
+function encode_ascii85(a) {
+  var b, c, d, e, f, g, h, i, j, k;
+  for (!/[^\x00-\xFF]/.test(a), b = "\x00\x00\x00\x00".slice(a.length % 4 || 4), a += b, 
+  c = [], d = 0, e = a.length; e > d; d += 4) f = (a.charCodeAt(d) << 24) + (a.charCodeAt(d + 1) << 16) + (a.charCodeAt(d + 2) << 8) + a.charCodeAt(d + 3), 
+  0 !== f ? (k = f % 85, f = (f - k) / 85, j = f % 85, f = (f - j) / 85, i = f % 85, 
+  f = (f - i) / 85, h = f % 85, f = (f - h) / 85, g = f % 85, c.push(g + 33, h + 33, i + 33, j + 33, k + 33)) :c.push(122);
+  return function(a, b) {
+    for (var c = b; c > 0; c--) a.pop();
+  }(c, b.length), "<~" + String.fromCharCode.apply(String, c) + "~>";
+}
+
+function decode_ascii85(a) {
+  var c, d, e, f, g, h = String, l = "length", w = 255, x = "charCodeAt", y = "slice", z = "replace";
+  for ("<~" === a[y](0, 2) && "~>" === a[y](-2), a = a[y](2, -2)[z](/\s/g, "")[z]("z", "!!!!!"), 
+  c = "uuuuu"[y](a[l] % 5 || 5), a += c, e = [], f = 0, g = a[l]; g > f; f += 5) d = 52200625 * (a[x](f) - 33) + 614125 * (a[x](f + 1) - 33) + 7225 * (a[x](f + 2) - 33) + 85 * (a[x](f + 3) - 33) + (a[x](f + 4) - 33), 
+  e.push(w & d >> 24, w & d >> 16, w & d >> 8, w & d);
+  return function(a, b) {
+    for (var c = b; c > 0; c--) a.pop();
+  }(e, c[l]), h.fromCharCode.apply(h, e);}
+function requestidInfo(id) {
+  const val = document.querySelector(id).value;
+  console.log('Requested Information is:' + val)
+  return val;
+}
+function defineAudioFunction(path) {
+  if (path) {
+  let beat = new Audio(path);
+  } else {
+    const path2 = prompt('enter path loc...')
+    let beat = new Audio(path2)
+  }
+  function playDefinedAudio() {
+    beat.play();
+  }
+  playDefinedAudio();
+
+}
+function pauseCurrentAudio() {
+  beat.pause();
+}
+function disableDisplayForIMG(id,alt) {
+  
+  document.getElementById(id).innerHTML = alt;
+  console.log('Sucessfully Replaced The Image ID with the alternate text:' + alt);
+}
+function createNestedList(data, id_for_list) {
+  let list_create = document.createElement('ul');
+  list_create.id = id_for_list;
+  document.body.appendChild(list_create);
+
+  let list = document.getElementById(id_for_list);
+  createListItems(data, list);
+  console.log('Successfully defined and created a nested list!');
+
+
+function createListItems(data, parent) {
+  for (let i = 0; i < data.length; i++) {
+    let listItem = document.createElement('li');
+    parent.appendChild(listItem);
+
+    if (Array.isArray(data[i])) {
+      let nestedList = document.createElement('ul');
+      listItem.appendChild(nestedList);
+      createListItems(data[i], nestedList);
+    } else {
+      listItem.innerText = data[i];
+    }
+  }
+}}
+function createIframe(src,width,height,id) {
+  const iframe_creation = document.createElement("iframe");
+  iframe_creation.src = src;
+  iframe_creation.width = width;
+  iframe_creation.height = height;
+  iframe_creation.id = id;
+  document.body.appendChild(iframe_creation);
+  console.log('Sucessfully Created Iframe!')
+}
+function createLink(href,text,id) {
+  const a_link_creation = document.createElement("a");
+  a_link_creation.href = href;
+  a_link_creation.innerHTML = text;
+  a_link_creation.id=id;
+  document.body.appendChild(a_link_creation);
+  console.log('Inserted a link. Info: \n HREF:' + href + '\n text: ' + text + '\n ID:' + id);
 }
