@@ -956,3 +956,14 @@ function createLink(href,text,id) {
   document.body.appendChild(a_link_creation);
   console.log('Inserted a link. Info: \n HREF:' + href + '\n text: ' + text + '\n ID:' + id);
 }
+function currentTime(alertbool) {
+  const date = new Date()
+  if (alertbool == false) {
+    console.log(
+      'date:' + date
+    )
+  } else {
+    console.log('date:' + date)
+    alert('Date: ' + date);
+  }
+}
