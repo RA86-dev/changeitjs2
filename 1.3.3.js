@@ -1033,7 +1033,6 @@ function permissions(permission_nav_object ) {
       console.log(true)
       return false;
     }
-    // Don't do anything if the permission was denied.
   });}
   function scaleInPercent(percent,id) {
     document.getElementById(id).style.transform = `scale(${percent}%)`;
