@@ -1058,9 +1058,13 @@ function permissions(permission_nav_object ) {
    return list;
 
   }
-  function utf8encoder(text) {
-    const convert=new TextEncoder();
-    const converted = convert.encode(text);
-    return converted;
+  function utf8encode(text) {
+  	const encoder = new TextEncoder();
+  	return encoder.encode(text);
+  }
+  function utf8encode(text) {
+  	const encoder = new TextEncoder();
+  	return encoder.decode(text);
+
   }
   
