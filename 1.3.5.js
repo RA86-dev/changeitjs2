@@ -1057,8 +1057,7 @@ function permissions(permission_nav_object ) {
    } 
    return list;
 
-  }
-function utf8encode(text) {
+  }function utf8encode(text) {
   const encoder = new TextEncoder();
   return encoder.encode(text);
 }
@@ -1067,5 +1066,6 @@ function utf8decode(encodedText) {
   const decoder = new TextDecoder();
   return decoder.decode(encodedText);
 }
+
 
   
