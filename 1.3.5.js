@@ -1057,14 +1057,16 @@ function permissions(permission_nav_object ) {
    } 
    return list;
 
-  }function utf8encode(text) {
+  }
+function utf8encode(text) {
   const encoder = new TextEncoder();
-  return encoder.encode(text);
+  return Array.from(encoder.encode(text));
 }
 
 function utf8decode(encodedText) {
   const decoder = new TextDecoder();
-  return decoder.decode(encodedText);
+  const uint8Array = new Uint8Array(encodedText);
+  return decoder.decode(uint8Array);
 }
 
 
