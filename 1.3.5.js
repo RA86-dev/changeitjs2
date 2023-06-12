@@ -9,6 +9,15 @@ Website: https://tinyurl.com/changeitjs
 Thank you for using Change It JS!
 */
 
+
+function go_back(num_to_go_back) {
+	if (num_to_go_back) { 
+		history.go(num_to_go_back);
+	}
+	else {
+		history.back()
+	}
+}
 const apiKey = "PUT_YOUR_API_KEY_HERE";
 // Loading...
 console.clear()
