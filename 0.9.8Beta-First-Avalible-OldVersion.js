@@ -114,11 +114,6 @@
                 void 0;
             }
         }
-        function reboot() {
-            console.clear()
-            console.log('Rebooting')
-            console.error('CO76:REBOOTSUCESSFULL')
-        }
          
         function info() {
             alert('Change It! is a online interactive Javascript code used for debbuging and playing with websites. This was created on May 26th 2023, And was created by one person. Click OK to continue.')
