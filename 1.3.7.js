@@ -4,7 +4,7 @@ Date Created: 5/26/23
 Description
 Change it is a Javascript Program to make a fun/work tool.
 Website: [shortened]: tinurl.com/changeitjs
-Author: RA86-dev
+Author: RA86-dev (Github)
 Website: https://tinyurl.com/changeitjs
 Thank you for using Change It JS!
 */
@@ -170,14 +170,17 @@ function typealert(text,type) {
 if (type == 'prompt') {
     var promp = prompt(text);
     console.log('Input for ' + type + ' is ' + promp);
+    return promp
 } 
     if (type == 'def') {
         alert(text);
         console.log('Alerted ' + text);
+        
     }
     if (type == 'conf') {
         var conf = confirm(text)
         console.log('Output of CONFIRM is ' + conf)
+        return conf;
     }
 
 }
@@ -1139,5 +1142,9 @@ function reverse_animation(sel) {
 }
 function go_to_gsap_webpage() {
   redirect_to_website("https://greensock.com");
-  
+
 }
+sleep(5000)
+console.clear()
+console.log('Change It JS has been installed')
+console.log('Visit tinyurl.com/changeitjs for more info.')
