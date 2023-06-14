@@ -8,8 +8,6 @@ Author: RA86-dev
 Website: https://tinyurl.com/changeitjs
 Thank you for using Change It JS!
 */
-
-const apiKey = "PUT_YOUR_API_KEY_HERE";
 // Import green_sock lib.
 let create_script = document.createElement("script");
 create_script.src = "https://cdn.jsdelivr.net/npm/gsap@3.12.1/dist/gsap.min.js";
@@ -24,6 +22,7 @@ function go_back(num_to_go_back) {
 		history.back()
 	}
 }
+const apiKey = "PUT_YOUR_API_KEY_HERE";
 // Loading...
 console.clear()
 console.log('Preparing to Load')
@@ -1113,13 +1112,6 @@ function gsapto(sel,dur,xc,yc) {
   })
   console.log('Finished.')
 }
-function imp_script(src) {
-  let create_script = document.createElement("script");
-create_script.src = src;
-document.body.appendChild(create_script);
-console.log('Imported Script. This may not work .')
-
-}
 function gsapadvance_dom(sel,dur,xc,yc,bgcolor,staggers,ease2) {
   if (bgcolor == "none") {
     var comp = "00FFFFFF";
@@ -1135,4 +1127,17 @@ function gsapadvance_dom(sel,dur,xc,yc,bgcolor,staggers,ease2) {
     ease:ease2
   });
   console.log('Finished.')
+}
+function pause_animation(sel) {
+  gsap.to(sel, {paused:true});
+}
+function resume_animation(sel) {
+  gsap.to(sel,{paused:false});
+}
+function reverse_animation(sel) {
+  gsap.to(sel, {reverse:true});
+}
+function go_to_gsap_webpage() {
+  redirect_to_website("https://greensock.com");
+  
 }
