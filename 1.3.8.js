@@ -16,15 +16,16 @@ if (navigator.onLine == false) {
   console.error('GSAP Advance DOM Features will not work due to no internet. ')
 }
 
-function go_back(num_to_go_back) {
-	if (num_to_go_back) { 
-		history.go(num_to_go_back);
-	}
-	else {
-		history.back()
-	}
-}
-const apiKey = "PUT_YOUR_API_KEY_HERE";
+const go_back = (num_to_go_back) => {
+    if (num_to_go_back) { 
+      history.go(num_to_go_back);
+    } else {
+      history.back();
+    }
+  };
+  
+  
+const apiKey = "PUT_API_KEY_HERE";
 // Loading...
 console.clear()
 console.log('Preparing to Load')
