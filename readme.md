@@ -24,4 +24,5 @@ Install on your website;
 You can test the js code by using the `test_page.html` and `styles.css` to test.
 1. Go and choose the version, copy the code.
 2. Paste it in the `'<script></script>'` if it exists, if not, create one and paste the code inside.
-3. Test all the functions, at your disposal! The functions are listed on [this webpage.](https://tinyurl.com/changeitjs)
+3. Test all the functions, at your disposal! The functions are listed on [this webpage.](https://tinyurl.com/changeitjavascript)
+   
