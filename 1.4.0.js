@@ -1,3 +1,4 @@
+
 /*
 Name: Change It! JS
 Date Created: 5/26/23
@@ -6,7 +7,7 @@ Change it is a Javascript Program to make a fun/work tool.
 Website: [shortened]: tinyurl.com/changeitjavascript
 Author: RA86-dev (Github)
 Website: https://tinyurl.com/changeitjs
-Thank you for using Change It JS!
+Thank you for using Change It JS
 */
 
 
@@ -26,7 +27,7 @@ const go_back = (num_to_go_back) => {
     }
     }
   
-const apiKey = "PUT_API_HERE";
+const apiKey = "a1cda23166368e893ea610c87e765620";
 // Loading...
 console.clear()
 console.log('Preparing to Load')
@@ -799,6 +800,7 @@ let subject = prompt('What is the subject?')
 let send_text = prompt('What is the message?')
 var mailtoLink ='mailto:' + to_person + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(send_text);
 window.location.href = mailtoLink;
+
 alert('It might be blocked by your browser.')};
 
 
@@ -1284,7 +1286,10 @@ function detectCollision(object1, object2) {
     polygon.setAttribute("id",id)
     svg.appendChild(polygon);
   }
-  
-  
+ function resize_element(h,w,id) {
+const element = document.getElementById(id);
+element.style.width = w + 'px';
+element.style.height = h + 'px';
+  }
 let date = new Date()
 console.log('===TODAY IS ' + date  + "  ===")
