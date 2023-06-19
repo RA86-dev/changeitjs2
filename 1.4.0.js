@@ -9,6 +9,7 @@ Author: RA86-dev (Github)
 Website: https://tinyurl.com/changeitjs
 Thank you for using Change It JS
 */
+console.log('Change It JavaScript');
 
 
 const go_back = (num_to_go_back) => {
@@ -837,7 +838,7 @@ const ageDate = new Date(difference_in_milliseconds)
 return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 function formatCurrency(amount,currency) {
-return '${currency}${amount.toFixed(2)}';
+return `${currency}${amount.toFixed(2)}`;
 }
 
 function calculateDistance2d(x1, y1, x2, y2) {
@@ -1292,4 +1293,4 @@ element.style.width = w + 'px';
 element.style.height = h + 'px';
   }
 let date = new Date()
-console.log('===TODAY IS ' + date  + "  ===")
+console.log('Today is: ' + date  + ".");
