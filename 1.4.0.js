@@ -9,7 +9,11 @@ Author: RA86-dev (Github)
 Website: https://tinyurl.com/changeitjs
 Thank you for using Change It JS
 */
-console.log('Change It JavaScript');
+console.log('Change It JavaScript NJS loading sys,');
+console.log('Loading Screen Shortly...');
+
+
+
 
 
 const go_back = (num_to_go_back) => {
@@ -1292,5 +1296,11 @@ const element = document.getElementById(id);
 element.style.width = w + 'px';
 element.style.height = h + 'px';
   }
-let date = new Date()
+
+
+  let date = new Date()
 console.log('Today is: ' + date  + ".");
+if (navigator.onLine == false) {
+  console.error('CONNECTION FAILED: 401')
+  console.error('Please connect to internet.')
+}
