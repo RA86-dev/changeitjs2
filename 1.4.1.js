@@ -1149,6 +1149,8 @@ function display_new_error_in_cnsle(type,text) {
 
     } else if (type == "log") {
         console.log(text);
+    } else if (type == "war") {
+      console.warn(text);
     }
 }
 
