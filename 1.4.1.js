@@ -1282,7 +1282,7 @@ function gsapto(sel,dur,xc,yc) {
 }
 function find_current_date() {
     let current_date = new Date()
-    return date;
+    return current_date;
 }
 function detectCollision(object1, object2) {
     // Check if the bounding boxes of the objects overlap
