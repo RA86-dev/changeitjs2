@@ -20,6 +20,13 @@ Install on your website;
 1. do the same steps as 1-3 on installing on a different website.
 2. Create a `<script></script>` bracket.
 3. Paste the code inside of the `<script></script>`
+4. add the attribute "defer" to load the code on load, to prevent more issues. (ex: `<script defer> //Code...  </script>`
+Alternative Installation on your website:
+
+1. do the same steps as 1-3 on installing on a different website.
+2. Create a `<script></script>` bracket.
+3. Create a file and name it anything.
+4. in the HTML file, add `<script src="Put the source here" defer></script>`.
 ## Testing:
 You can test the js code by using the `test_page.html` and `styles.css` to test.
 1. Go and choose the version, copy the code.
