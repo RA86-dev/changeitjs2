@@ -12,8 +12,9 @@ This is a open-source free Code!
 */
 console.log('Change It JavaScript NJS loading sys,');
 console.log('Loading Screen Shortly...');
-function print() {
-  window.print() };
+function print_page() {
+  window.print() 
+};
 
 
 
