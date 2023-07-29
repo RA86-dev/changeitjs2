@@ -32,6 +32,13 @@ if (navigator.onLine == false) {
   console.error('Please connect to internet.')
     
 }
+// Added a class for INJECTING code into about:blank
+class inject{constructor(){this.codeToInject=`
+          Test Program. run (newInject = new Inject).newCodeInject("newCodeElement"); to change the element.
+        `}inject_code(){window.open("about:blank").document.body.innerHTML=this.codeToInject}newCodeInject(e){this.codeToInject=`
+          ${e}
+        `}}
+// (Note: Minified by Toptotals Website for minifying JS code..
 
 
 const go_back = (num_to_go_back) => {
